@@ -90,6 +90,8 @@ def save_df(data, filename, row_height=0.625, font_size=14,
             n = (data.at[row.Index, colname])
             if len(n) > longest:
                 longest = len(n)
+            if len(colname) > longest:
+                longest = len(colname)
 
     tegur = 0.1715
     if longest < 5:
@@ -123,4 +125,3 @@ def save_df(data, filename, row_height=0.625, font_size=14,
 
 def kellaaeg(timestamp):
     return datetime.datetime.fromtimestamp(timestamp / 1000.0).time()
-
